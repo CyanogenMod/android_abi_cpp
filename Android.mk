@@ -2,7 +2,6 @@ LOCAL_PATH:= $(call my-dir)
 
 libgabi++_c_includes := \
 	$(LOCAL_PATH)/include \
-	bionic/libstdc++/include \
 
 libgabi++_common_src_files := \
 	src/array_type_info.cc \
@@ -27,7 +26,7 @@ LOCAL_SRC_FILES:= $(libgabi++_common_src_files)
 LOCAL_MODULE:= libgabi++
 LOCAL_C_INCLUDES := $(libgabi++_c_includes)
 LOCAL_RTTI_FLAG := -frtti
-LOCAL_SYSTEM_SHARED_LIBRARIES := libc
+LOCAL_CXX_STL := libstdc++
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
@@ -38,5 +37,5 @@ LOCAL_SRC_FILES:= $(libgabi++_common_src_files)
 LOCAL_MODULE:= libgabi++
 LOCAL_C_INCLUDES := $(libgabi++_c_includes)
 LOCAL_RTTI_FLAG := -frtti
-LOCAL_SYSTEM_SHARED_LIBRARIES := libc
+LOCAL_CXX_STL := libstdc++
 include $(BUILD_STATIC_LIBRARY)
